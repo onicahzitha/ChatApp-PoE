@@ -50,5 +50,34 @@ public class POEAPK {
         
         String regResult = loginSystem.registerUser(userName, password, phoneNumber);
         System.out.println(regResult);
+        
+        //LOGIN (only if registration successful)
+        if (regResult.contains("successfully captured")){
+            
+            System.out.println("\n--- User Login ---");
+            
+            System.out.println("Enter Username: ");
+            loginUser = input.nextLine();
+            
+            System.out.println("Enter Password: ");
+            loginPass = input.nextLine();
+            
+            boolean isSuccess = loginSystem.checkUserName(userName);
+            
+            System.out.println(
+                    loginSystem.returnLoginStatus(isSuccess, firstName, lastName)
+            );
+            
+            
+            System.out.println("\nType 'Yes' to confirm you have read everything:");
+            String confirm = input.nextLine();
+            
+            if (confirm.equalsIgnoreCase("Yes")) {
+                System.out.println("Welcome " + firstName + " " + lastName + " , it is great to see you again..");
+            } else {
+                System.out.println("Access denied. Please read the instructions first.");
+            }
+        }
+        
     }
 }
