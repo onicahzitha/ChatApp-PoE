@@ -25,6 +25,35 @@ public class Login {
         boolean hasCapital = password.matches(".*[A-Z].*");
         boolean hasNumber = password.matches(".*[0-9].*");
         boolean hasSpecial = password.matches(".*[!@#$%^&*()].*");
+        boolean isLongEnough = password.length()>=8;
+        
+        return hasCapital && hasNumber && hasSpecial && isLongEnough;
+         
+    }
+    
+    //PHONE VALIDATION
+    public boolean checkCellPhoneNumber(String phone){
+        return phone.startsWith("+27") && phone.length() ==12;
         
     }
+    
+    //REGISTER USER
+    public String registerUser(String username, String password, String phone) {
+        
+        if (!checkUserName(username)) {
+            return "Username is not correctly formatted. It must contain an underscore and be less than 5 characters.";
+        }
+        if (!checkPasswordComplexity(password)) {
+            return "Password is not correctly formatted. Must be at least 8 characters, include a capital letter, number,and special character.";
+            }
+        if (!checkCellPhoneNumber(phone)) {
+            return "Cell phone number is incorrectly formatted or missing country code.";
+        }
+        
+        //STORE DETAILS
+        storedUsername = username;
+        storedPassword = password;
+        storedPhone = phone; 
+    }
 }
+ 
