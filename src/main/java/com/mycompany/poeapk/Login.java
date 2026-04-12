@@ -6,7 +6,7 @@ package com.mycompany.poeapk;
 
 /**
  *
- * @author Student
+ * @author Ncedolwenkosi Onicah Zitha
  */
 public class Login {
     
