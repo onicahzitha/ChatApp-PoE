@@ -54,6 +54,16 @@ public class Login {
         storedUsername = username;
         storedPassword = password;
         storedPhone = phone; 
+        
+        return "User successfully captured.";
+    }
+    //LOGIN STATUS MESSAGE
+    public String returnLoginStatus(boolean success, String firstName, String lastName) {
+        if (success) {
+            return "Welcome " + firstName + " " + lastName + ", it is great to see you again.";
+        } else{
+            return "Username or password incorrect, please try again.";
+        }
     }
 }
  
