@@ -16,5 +16,30 @@ public class Message {
     private String messageContent;
     private String messageHash;
             
+    //Initializing 
+    public Message(int messageNumber, String recipientNumber, String messageContent){
+        this.messageNumber = messageNumber;
+        this.recipientNumber = recipientNumber;
+        this.messageContent = messageContent;
+        this.messageID = generateMessageID();
+        //this.messageHash = generateMessageHash();
+    }
+    //Generate a digit number for tracking
+    private String generateMessageID(){
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 10; i++){
+            sb.append(random.nextInt(10));
+        }
+        return sb.toString();
+        }
     
+    //Confirm message ID is not more than 10 characters long
+    public boolean checkMessageID(){
+        return.this.messageID != null && this.messageID.length() <=10;
+    }
+    //Confirm text length is less than 250 characters
+    public String checkMessageLegnth(){
+    }
+
 }
