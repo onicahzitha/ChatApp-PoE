@@ -36,10 +36,21 @@ public class Message {
     
     //Confirm message ID is not more than 10 characters long
     public boolean checkMessageID(){
-        return.this.messageID != null && this.messageID.length() <=10;
+        return this.messageID != null && this.messageID.length() <=10;
     }
     //Confirm text length is less than 250 characters
     public String checkMessageLegnth(){
+        if (this.messageContent == null){
+            return "Please enter your message.";
+        }
+        if (this.messageContent.length() >250){
+            int overflow = this.messageContent.length() -250;
+            return "Message exceeds 250 characters by" + overflow + "characters; please reduce the size.";
+        }
+        return "Message ready to send.";
+    }
+    
+        }
     }
 
 }
