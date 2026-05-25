@@ -22,7 +22,7 @@ public class Message {
         this.recipientNumber = recipientNumber;
         this.messageContent = messageContent;
         this.messageID = generateMessageID();
-        //this.messageHash = generateMessageHash();
+        this.messageHash = createMessageHash();
     }
     //Generate a digit number for tracking
     private String generateMessageID(){
