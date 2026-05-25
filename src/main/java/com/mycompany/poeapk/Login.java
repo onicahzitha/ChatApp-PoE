@@ -66,6 +66,10 @@ public class Login {
         }
     }
 
+    boolean loginUser(String loginUser, String loginPass) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
    
         
     
